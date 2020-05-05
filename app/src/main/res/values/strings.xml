@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Break the chain</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="address">Address</string>
+    <string name="e_mail">Email</string>
+    <string name="submit">submit</string>
+    <string name="loading">Loading…</string>
+    <string name="login">Login</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="menu_home">Home</string>
+    <string name="navAssignment">COVID Assignment</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="nav_header_subtitle">United against COVID</string>
+    <string name="covid">COVID-19</string>
+    <string name="moreInfo">Give some more info.</string>
+    <string name="heatmap">HEATMAP</string>
+    <string name="people_gathering">Where were much people gathered who tested positive?</string>
+    <string name="play_data">PLAY DATA</string>
+    <string name="play_about">Play your whereabouts encoded to show your healthcare professional.</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_half"
+        android:text="@string/covid"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/activity_half"
+        android:layout_weight="1"
+        android:padding="@dimen/activity_half"
+        android:scrollbars="vertical" />
+
+    <id.ss564.lib.slidingbutton.SlidingButton
+        android:id="@+id/slidingButton"
+        style="@style/SlidingButton.RoundedTrackabale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:padding="@dimen/activity_half"
+        app:sliding_button_background="@drawable/sliding_rect_background"
+        app:sliding_button_icon="@drawable/ic_chevron_right"
+        app:sliding_button_icon_tint="@color/white"
+        app:sliding_corner_radius="28dp"
+        app:sliding_showTrack="true"
+        app:sliding_text="Settings on"
+        app:sliding_text_color="@color/black"
+        app:sliding_text_size="16dp"
+        app:sliding_trackBackgroundTint="@color/colorBlue"
+        android:background="@drawable/sliding_rect"
+        app:sliding_text_textStyle="bold" />
+
+</LinearLayout>
