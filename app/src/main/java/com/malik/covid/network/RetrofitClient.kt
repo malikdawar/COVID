@@ -14,7 +14,6 @@ object RetrofitClient {
     private var okHttpClient: OkHttpClient? = null
 
     fun getInterfaceService(baseUrl: String): ApiInterface {
-
         if (okHttpClient == null)
             initOkHttp()
 
@@ -29,7 +28,6 @@ object RetrofitClient {
     }
 
     private fun initOkHttp() {
-
         val httpClient = OkHttpClient().newBuilder()
             .connectTimeout(REQUEST_TIMEOUT.toLong(), TimeUnit.SECONDS)
             .readTimeout(REQUEST_TIMEOUT.toLong(), TimeUnit.SECONDS)
@@ -43,7 +41,6 @@ object RetrofitClient {
             val requestBuilder = original.newBuilder()
                 .addHeader("Accept", "application/json")
                 .addHeader("Content-Type", "application/json")
-
 
             val request = requestBuilder.build()
             chain.proceed(request)

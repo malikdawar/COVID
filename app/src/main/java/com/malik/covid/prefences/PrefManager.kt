@@ -1,15 +1,9 @@
 package com.malik.covid.prefences
 
 import android.content.Context
-import com.malik.covid.utils.Const.ACCESS_TOKEN
-import com.malik.covid.utils.Const.USER_SESSION
+
 
 class PrefManager(private var context: Context) {
-
-    fun isUserLoggedOut(): Boolean {
-        val sharedPreferences = context.getSharedPreferences("SessionDetails", Context.MODE_PRIVATE)
-        return sharedPreferences.getString(USER_SESSION, "")!!.isEmpty()
-    }
 
     fun putStringPref(key: String, value: String) {
         val sharedPreferences = context.getSharedPreferences("SessionDetails", Context.MODE_PRIVATE)
@@ -71,20 +65,5 @@ class PrefManager(private var context: Context) {
         val editor = sharedPreferences.edit()
         editor.clear()
         editor.apply()
-    }
-
-    fun saveSessionDetails(username: String, password: String) {
-        val sharedPreferences = context.getSharedPreferences("SessionDetails", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString(USER_SESSION, username + password)
-        editor.apply()
-    }
-
-    fun getAccessToken(): String {
-        return getStringPref(ACCESS_TOKEN, "")!!
-    }
-
-    fun saveAccessToken(token: String) {
-        putStringPref(ACCESS_TOKEN, token)
     }
 }
