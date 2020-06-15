@@ -28,19 +28,6 @@ class MainFragment : BaseFragment(), MainMenuAdapter.MenuItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mainMenuAdapter = MainMenuAdapter(context?.getPopulatedList()!!, this)
-        recyclerViewMenu.apply {
-            layoutManager = GridLayoutManager(context, 2)
-            itemAnimator = DefaultItemAnimator()
-            adapter = mainMenuAdapter
-            this.addItemDecoration(GridItemDecoration(context, R.dimen.activity_half))
-        }
-        mainMenuAdapter.notifyDataSetChanged()
-
-
-        slidingButton.setOnStateChangeListener {
-
-        }
     }
 
     override fun itemClickListener(mainMenuItem: MainMenuItem) {
