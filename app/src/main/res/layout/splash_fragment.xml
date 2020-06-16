@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="#BCDFBE"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/ivImg"
         android:layout_width="wrap_content"
-        android:layout_height="130dp"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
-        tools:src="@drawable/app_logo" />
+        tools:src="@drawable/context_btn" />
 
 </LinearLayout>

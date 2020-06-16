@@ -1,4 +1,4 @@
-package com.malik.covid.view.profile
+package com.malik.covid.viewmodel
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
@@ -6,15 +6,18 @@ import androidx.lifecycle.liveData
 import com.malik.covid.base.BaseViewModel
 import com.malik.covid.enums.Status
 import com.malik.covid.models.Resource
-import com.malik.covid.models.dao.UserDao
-import com.malik.covid.repository.Repository
+import com.malik.covid.repository.GroupRepo
+import com.onlive.covid.models.response.GroupDetailsResponse
 import kotlinx.coroutines.Dispatchers
 import org.koin.java.KoinJavaComponent
 
-class ProfileViewModel : BaseViewModel<ProfileViewModel.View>() {
+/**
+ * Created by George Thomas on 12/06/20
+ */
+class GroupViewModel: BaseViewModel<GroupViewModel.View>() {
 
-    private val mRepository: Repository by KoinJavaComponent.inject(
-        Repository::class.java
+    private val mRepository: GroupRepo by KoinJavaComponent.inject(
+        GroupRepo::class.java
     )
     private var lifecycleOwner: LifecycleOwner? = null
 
@@ -22,13 +25,21 @@ class ProfileViewModel : BaseViewModel<ProfileViewModel.View>() {
         this.lifecycleOwner = lifecycleOwner
     }
 
-    fun getUserDetails(userId: String) {
-        userLiveData(userId).observe(lifecycleOwner!!, Observer {
+    fun getGroupDetails() {
+        /*viewModelScope.launch (Dispatchers.IO){
+            try {
+            group = GroupRepo.getInstance().getGroupDetails()!!
+            } catch (e: Exception) {
+
+            }
+        }
+        return group*/
+        groupLiveData().observe(lifecycleOwner!!, Observer {
             it.run {
                 when (this.status) {
                     Status.SUCCESS -> {
                         getView().dismissProgressBar()
-                        getView().onUserProfile(this.data!!)
+                        getView().upDateGroupDetails(this.data!!)
                     }
                     Status.ERROR -> {
                         getView().onDetailsUpdateError(it.message!!)
@@ -42,20 +53,17 @@ class ProfileViewModel : BaseViewModel<ProfileViewModel.View>() {
         })
     }
 
-    private fun userLiveData(userId: String) = liveData(Dispatchers.Main) {
+    private fun groupLiveData() = liveData(Dispatchers.Main) {
         emit(Resource.loading(data = null))
         try {
-            val data = mRepository.getUserProfile(userId)
+            val data = mRepository.getGroupDetails()
             emit(Resource.success(data = data))
         } catch (exception: Exception) {
             emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
         }
     }
 
-    interface View {
-        fun onDetailsUpdateError(error: String)
-        fun showProgressBar()
-        fun dismissProgressBar()
-        fun onUserProfile(userDao: UserDao)
+    interface View: BaseView{
+        fun upDateGroupDetails(response:GroupDetailsResponse)
     }
 }

@@ -3,8 +3,9 @@ package com.malik.covid
 import android.app.Application
 import android.content.Context
 import com.malik.covid.network.RetrofitClient
+import com.malik.covid.repository.GroupRepo
 import com.malik.covid.repository.Repository
-import com.malik.covid.utils.Const.BASE_URL
+import com.malik.covid.utils.Constants.BASE_URL
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
@@ -30,6 +31,8 @@ class App : Application() {
             single { RetrofitClient.getInterfaceService(BASE_URL) }
 
             single { Repository.getInstance() }
+
+            single { GroupRepo.getInstance() }
 
         }
 
