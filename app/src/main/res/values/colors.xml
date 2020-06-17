@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#211D70</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#303F9F</color>
+    <color name="colorAccent">#34f49e</color>
     <color name="bg_clolor">#fafafa</color>
     <color name="color_hint">#40000000</color>
     <color name="black">#000000</color>
@@ -17,5 +17,6 @@
     <color name="colorRouteLineCyren">#0bcebd</color>
     <color name="colorRouteLine">#80000000</color>
     <color name="colorBlue">#adb0ff</color>
+    <color name="progress_transparent_dark">#DAD9D6</color>
 
 </resources>

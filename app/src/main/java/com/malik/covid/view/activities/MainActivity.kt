@@ -1,9 +1,8 @@
-package com.malik.covid.view
+package com.malik.covid.view.activities
 
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
@@ -15,7 +14,6 @@ import com.malik.covid.extensions.invisible
 import com.malik.covid.extensions.replaceFragmentSafely
 import com.malik.covid.extensions.visible
 import com.malik.covid.view.main.MainFragment
-import com.malik.covid.view.splash.SplashFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
     View.OnClickListener {
@@ -24,20 +22,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
-        setContentView(R.layout.activity_main)
-        supportActionBar!!.hide()
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         mBinding.navView.setNavigationItemSelectedListener(this)
-        launchSplashFragment()
+        supportActionBar!!.hide()
 
-    }
-
-    private fun launchSplashFragment() {
-        replaceFragmentSafely(fragment = SplashFragment())
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
@@ -72,7 +60,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    public fun showProgressBar(isVisible: Boolean){
+    fun showProgressBar(isVisible: Boolean){
         if(isVisible){
             mBinding.progressBar.visibility=View.VISIBLE
         }else{

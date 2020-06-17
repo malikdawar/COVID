@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import com.kaopiz.kprogresshud.KProgressHUD
 import com.malik.covid.prefences.PrefManager
 import com.malik.covid.utils.DialogUtils
-import com.malik.covid.view.MainActivity
+import com.malik.covid.view.activities.MainActivity
 
 abstract class BaseFragment : Fragment() {
 

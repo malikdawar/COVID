@@ -12,7 +12,7 @@ import android.text.TextUtils
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.malik.covid.R
-import com.malik.covid.view.MainActivity
+import com.malik.covid.view.activities.MainActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
