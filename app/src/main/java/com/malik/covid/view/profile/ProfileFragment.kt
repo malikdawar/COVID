@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.malik.covid.R
 import com.malik.covid.base.BaseFragment
 import com.malik.covid.models.dao.UserDao
-import androidx.fragment.app.viewModels
+import com.malik.covid.viewmodel.ProfileViewModel
 
 class ProfileFragment : BaseFragment(), ProfileViewModel.View {
 

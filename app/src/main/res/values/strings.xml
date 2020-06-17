@@ -18,4 +18,6 @@
     <string name="people_gathering">Where were much people gathered who tested positive?</string>
     <string name="play_data">PLAY DATA</string>
     <string name="play_about">Play your whereabouts encoded to show your healthcare professional.</string>
+    <string name="not_found">No groups found</string>
+    <string name="common_error">"Sorry, we're fixing a connection issue right now. "</string>
 </resources>

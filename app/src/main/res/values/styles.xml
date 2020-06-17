@@ -49,4 +49,16 @@
         <item name="listPreferredItemPaddingRight">8dp</item>
     </style>
 
+    <style name="progressBarStyleLogin">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@color/progress_transparent_dark</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:padding">160dp</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <color name="progress_transparent_dark">#DAD9D6</color>
 </resources>

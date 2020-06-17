@@ -4,46 +4,70 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.GridLayoutManager
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import com.malik.covid.R
 import com.malik.covid.adapter.MainMenuAdapter
 import com.malik.covid.base.BaseFragment
-import com.malik.covid.extensions.getPopulatedList
+import com.malik.covid.databinding.MainFragmentBinding
 import com.malik.covid.extensions.showToastMsg
 import com.malik.covid.models.MainMenuItem
-import com.malik.covid.utils.GridItemDecoration
-import kotlinx.android.synthetic.main.main_fragment.*
+import com.malik.covid.view.MainActivity
+import com.malik.covid.viewmodel.GroupViewModel
+import com.onlive.covid.models.response.GroupDetailsResponse
 
-class MainFragment : BaseFragment(), MainMenuAdapter.MenuItemClickListener {
+class MainFragment : BaseFragment(), MainMenuAdapter.MenuItemClickListener, GroupViewModel.View {
+
     private lateinit var mainMenuAdapter: MainMenuAdapter
+    private val groupViewModel: GroupViewModel by viewModels()
+
+    lateinit var mBinding: MainFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        mBinding= DataBindingUtil.inflate(inflater,R.layout.main_fragment, container, false)
+        initView()
+        return mBinding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        mainMenuAdapter = MainMenuAdapter(context?.getPopulatedList()!!, this)
-        recyclerViewMenu.apply {
-            layoutManager = GridLayoutManager(context, 2)
-            itemAnimator = DefaultItemAnimator()
-            adapter = mainMenuAdapter
-            this.addItemDecoration(GridItemDecoration(context, R.dimen.activity_half))
-        }
-        mainMenuAdapter.notifyDataSetChanged()
-
-
-        slidingButton.setOnStateChangeListener {
-
+    private fun initView() {
+        groupViewModel.let {
+            it.attachView(this)
+            it.addObserver(this)
+            it.getGroupDetails()
         }
     }
 
     override fun itemClickListener(mainMenuItem: MainMenuItem) {
         context?.showToastMsg(mainMenuItem.description.toString())
+    }
+
+    override fun upDateGroupDetails(response: GroupDetailsResponse) {
+        Toast.makeText(context,response.name.toString(),Toast.LENGTH_LONG).show()
+    }
+
+    override fun showProgressBar() {
+        (activity as MainActivity).showProgressBar(true)
+    }
+
+    override fun dismissProgressBar() {
+        (activity as MainActivity).showProgressBar(false)
+    }
+
+    override fun onDetailsUpdateError(error: String) {
+        showErrorResponse()
+    }
+
+    private fun showErrorResponse() {
+        val builder = AlertDialog.Builder(requireActivity())
+        builder.setTitle("Please try again")
+        builder.setMessage(resources.getString(R.string.common_error))
+        builder.setPositiveButton(android.R.string.ok,null)
+
+        builder.show()
     }
 }

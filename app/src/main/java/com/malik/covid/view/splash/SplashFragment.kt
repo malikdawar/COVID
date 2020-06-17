@@ -13,7 +13,7 @@ import com.malik.covid.view.main.MainFragment
 class SplashFragment : BaseFragment() {
 
     companion object {
-        const val SPLASH_DURATION = 2500L
+        const val SPLASH_DURATION = 400L
     }
 
     override fun onCreateView(
@@ -21,7 +21,6 @@ class SplashFragment : BaseFragment() {
         container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         mainActivity.showNavigationDrawer(false)
-        mainActivity.showAndHideToolBar(false)
         return inflater.inflate(R.layout.splash_fragment, container, false)
     }
 

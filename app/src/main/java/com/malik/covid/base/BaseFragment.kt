@@ -2,9 +2,9 @@ package com.malik.covid.base
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.kaopiz.kprogresshud.KProgressHUD
 import com.malik.covid.prefences.PrefManager
 import com.malik.covid.utils.DialogUtils
-import com.kaopiz.kprogresshud.KProgressHUD
 import com.malik.covid.view.MainActivity
 
 abstract class BaseFragment : Fragment() {
@@ -20,6 +20,5 @@ abstract class BaseFragment : Fragment() {
         progressDialog = DialogUtils.showProgressDialog(mainActivity, cancelable = false)
 
         mainActivity.showNavigationDrawer(true)
-        mainActivity.showAndHideToolBar(true)
     }
 }
