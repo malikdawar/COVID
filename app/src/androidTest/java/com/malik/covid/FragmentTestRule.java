@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.test.rule.ActivityTestRule;
 
-import com.malik.covid.view.MainActivity;
+import com.malik.covid.view.activities.MainActivity;
 
 import org.junit.Assert;
 

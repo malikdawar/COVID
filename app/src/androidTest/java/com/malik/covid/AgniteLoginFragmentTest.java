@@ -1,22 +1,21 @@
 package com.malik.covid;
 
 import androidx.test.espresso.Espresso;
-import com.malik.covid.view.splash.SplashFragment;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 public class AgniteLoginFragmentTest {
 
     @Rule
-    public FragmentTestRule<SplashFragment> mFragmentTestRule = new FragmentTestRule<>(SplashFragment.class);
+    public FragmentTestRule<SplashActivity> mFragmentTestRule = new FragmentTestRule<>(SplashActivity.class);
 
     @Before
     public void fragmentSetup() {

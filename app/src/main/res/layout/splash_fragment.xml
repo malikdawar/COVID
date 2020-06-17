@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="#BCDFBE"
+    android:background="@color/colorAccent"
     android:orientation="vertical">
 
     <ImageView
@@ -12,6 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
-        tools:src="@drawable/context_btn" />
+        tools:src="@drawable/logo" />
 
 </LinearLayout>

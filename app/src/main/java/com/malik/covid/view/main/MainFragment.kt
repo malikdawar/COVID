@@ -14,7 +14,7 @@ import com.malik.covid.base.BaseFragment
 import com.malik.covid.databinding.MainFragmentBinding
 import com.malik.covid.extensions.showToastMsg
 import com.malik.covid.models.MainMenuItem
-import com.malik.covid.view.MainActivity
+import com.malik.covid.view.activities.MainActivity
 import com.malik.covid.viewmodel.GroupViewModel
 import com.onlive.covid.models.response.GroupDetailsResponse
 

@@ -8,6 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="drawerArrowStyle">@style/DrawerIconStyle</item>
     </style>
+    <style name="SplashTheme" parent="android:Theme.NoTitleBar.Fullscreen">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:gravity">fill</item>
+    </style>
 
     <style name="errorAppearance" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/colorAccent</item>
@@ -53,12 +60,9 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:background">@color/progress_transparent_dark</item>
+        <item name="android:background">@color/colorRed</item>
         <item name="android:elevation">1dp</item>
         <item name="android:indeterminate">true</item>
         <item name="android:padding">160dp</item>
-        <item name="android:visibility">invisible</item>
     </style>
-
-    <color name="progress_transparent_dark">#DAD9D6</color>
 </resources>
