@@ -13,7 +13,7 @@ import com.malik.covid.databinding.ActivityMainBinding
 import com.malik.covid.extensions.invisible
 import com.malik.covid.extensions.replaceFragmentSafely
 import com.malik.covid.extensions.visible
-import com.malik.covid.view.main.MainFragment
+import com.malik.covid.view.main.DashboardFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
     View.OnClickListener {
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         when(p0.itemId){
             R.id.nav_home->{
-                replaceFragmentSafely(fragment = MainFragment())
+                replaceFragmentSafely(fragment = DashboardFragment())
             }
         }
 

@@ -20,4 +20,6 @@
     <string name="play_about">Play your whereabouts encoded to show your healthcare professional.</string>
     <string name="not_found">No groups found</string>
     <string name="common_error">"Sorry, we're fixing a connection issue right now. "</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="email">Username or Email</string>
 </resources>

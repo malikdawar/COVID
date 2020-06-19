@@ -11,25 +11,25 @@ import androidx.fragment.app.viewModels
 import com.malik.covid.R
 import com.malik.covid.adapter.MainMenuAdapter
 import com.malik.covid.base.BaseFragment
-import com.malik.covid.databinding.MainFragmentBinding
+import com.malik.covid.databinding.DashboardFragmentBinding
 import com.malik.covid.extensions.showToastMsg
 import com.malik.covid.models.MainMenuItem
 import com.malik.covid.view.activities.MainActivity
 import com.malik.covid.viewmodel.GroupViewModel
 import com.onlive.covid.models.response.GroupDetailsResponse
 
-class MainFragment : BaseFragment(), MainMenuAdapter.MenuItemClickListener, GroupViewModel.View {
+class DashboardFragment : BaseFragment(), MainMenuAdapter.MenuItemClickListener, GroupViewModel.View {
 
     private lateinit var mainMenuAdapter: MainMenuAdapter
     private val groupViewModel: GroupViewModel by viewModels()
 
-    lateinit var mBinding: MainFragmentBinding
+    lateinit var mBinding: DashboardFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        mBinding= DataBindingUtil.inflate(inflater,R.layout.main_fragment, container, false)
+        mBinding= DataBindingUtil.inflate(inflater,R.layout.dashboard_fragment, container, false)
         initView()
         return mBinding.root
     }
