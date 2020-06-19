@@ -38,7 +38,7 @@
                     android:id="@+id/tab_bar"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/header_height"
-                    android:background="@color/colorPrimary" />
+                    android:background="@color/toolbar_color" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/filters"
@@ -53,13 +53,23 @@
                     android:visibility="gone"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+                <TextView
+                    android:id="@+id/txt_heading"
+                    style="@style/header"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/app_name" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:weightSum="4">
 
+
                     <ImageView
+                        android:id="@+id/img_back"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/header_height"
                         android:layout_weight="1"
@@ -70,6 +80,7 @@
                         android:src="@drawable/ic_arrow" />
 
                     <ImageView
+                        android:id="@+id/img_stack"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/header_height"
                         android:layout_weight="1"
@@ -95,6 +106,7 @@
                         android:layout_weight="1" />
 
                     <ImageView
+                        android:id="@+id/img_search"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/header_height"
                         android:layout_weight="1"

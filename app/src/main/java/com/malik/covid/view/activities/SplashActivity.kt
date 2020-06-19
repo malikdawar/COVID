@@ -8,7 +8,7 @@ import android.os.Handler
 class SplashActivity : Activity() {
 
     companion object {
-        const val SPLASH_DURATION = 200L
+        const val SPLASH_DURATION = 70L
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

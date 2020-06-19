@@ -3,6 +3,7 @@
     <color name="colorPrimary">#211D70</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#34f49e</color>
+    <color name="colorAccent_dark">#6cc290</color>
     <color name="bg_clolor">#fafafa</color>
     <color name="color_hint">#40000000</color>
     <color name="black">#000000</color>
@@ -18,5 +19,7 @@
     <color name="colorRouteLine">#80000000</color>
     <color name="colorBlue">#adb0ff</color>
     <color name="progress_transparent_dark">#DAD9D6</color>
+    <color name="toolbar_color">#232625</color>
+    <color name="green_dark">#39644a</color>
 
 </resources>

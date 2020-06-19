@@ -1,6 +1,9 @@
 package com.malik.covid;
 
 import androidx.test.espresso.Espresso;
+import androidx.test.rule.ActivityTestRule;
+
+import com.malik.covid.view.activities.SplashActivity;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -11,11 +14,12 @@ import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 public class AgniteLoginFragmentTest {
 
     @Rule
-    public FragmentTestRule<SplashActivity> mFragmentTestRule = new FragmentTestRule<>(SplashActivity.class);
+    public ActivityTestRule<SplashActivity> mFragmentTestRule = new ActivityTestRule<>(SplashActivity.class);
 
     @Before
     public void fragmentSetup() {
@@ -25,7 +29,7 @@ public class AgniteLoginFragmentTest {
 
     @Test
     public void fragment_can_be_instantiated() {
-        Espresso.onView(withId(R.id.btnSubmit)).check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.bt_confirm)).check(matches(isDisplayed()));
     }
 
     @Test
@@ -49,12 +53,12 @@ public class AgniteLoginFragmentTest {
     }
 
     private void authentication(String email, String password) {
-        Espresso.onView(withId(R.id.etEmail))
+        Espresso.onView(withId(R.id.etxt_email))
                 .perform(typeText(email), closeSoftKeyboard()); //type email and hide keyboard
 
-        Espresso.onView(withId(R.id.etPassword))
+        Espresso.onView(withId(R.id.etxt_password))
                 .perform(typeText(password), closeSoftKeyboard());//type password and hide keyboard
 
-        Espresso.onView(withId(R.id.btnSubmit)).perform(click()); //perform click
+        Espresso.onView(withId(R.id.bt_confirm)).perform(click()); //perform click
     }
 }
